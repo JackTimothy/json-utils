@@ -34,7 +34,8 @@ def format_size(size_bytes):
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate total size of JSON files in a directory")
-    parser.add_argument("directory", help="Path to the directory to search")
+    parser.add_argument("directory", nargs='?', default=os.getcwd(),
+                        help="Path to the directory to search (default: current working directory)")
     args = parser.parse_args()
 
     directory_path = args.directory
